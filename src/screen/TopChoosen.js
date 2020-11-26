@@ -106,9 +106,7 @@ class TopChosen extends React.Component {
     }
 
     // 空状态时
-    _emptySet() {
-        return <Text>10099999</Text>
-    }
+
 
     // 分割线
     _separator() {
@@ -178,7 +176,6 @@ class TopChosen extends React.Component {
                     numColumns={2}
                     style={{position: 'absolute', top: 10, height: '100%', width: '100%'}}
                     extraData={this.state}
-                    ListEmptyComponent={this._emptySet()}
                     // columnWrapperStyle={}
                     ItemSeparatorComponent={this._separator}
                     refreshControl={
@@ -360,12 +357,10 @@ class TopChosen extends React.Component {
     }
 
     _getItemView(item){
-        console.log('item')
-        console.log(item)
         return (<TouchableOpacity onPress={()=>this._goProduce(item.item)} style={{marginLeft: 10,backgroundColor: 'white', width: (this.state.he.width - 28) / 2,borderRadius: 8}}>
                     {/*   */}
                     <Image source={{uri: shopURL + item.item.image_url}} style={{resizeMode: 'stretch',width: (this.state.he.width - 20 - 8) / 2,aspectRatio: 1,borderTopRightRadius: 8, borderTopLeftRadius: 8}} />
-                    <Text style={{marginLeft: 8,marginRight: 8,marginTop: 8, color: 'rgba(94, 94, 94, 1)', fontSize: 14,}}>{item.item.product_name}</Text>
+                    <Text numberOfLines={2} style={{marginLeft: 8,marginRight: 8,marginTop: 8, color: 'rgba(94, 94, 94, 1)', fontSize: 14,}}>{item.item.product_name}</Text>
                     <Text style={{marginLeft: 8,marginTop: 12,fontFamily: 'PingFangSC-Semibold', fontSize: 16}}>¥{item.item.spec_price_yuan}</Text>
                     <View style={{justifyContent: 'space-between',flexDirection: 'row',marginLeft: 8, marginRight: 8,marginBottom: 12}}>
                         <Text style={{color: 'rgba(180, 40, 45, 1)', fontSize: 12}}>¥{item.item.vip_price_yuan}</Text>
@@ -376,17 +371,7 @@ class TopChosen extends React.Component {
 
     //跳转商品详情界面
     _goProduce(info){
-        // console.log(info,'eee')
-        // this.props.navigation.navigate("ProduceDetail", {
-        //     produce_id: info.browse_id,
-        //     title: info.product_name
-        // });
-        if (info["id"] === "1") {
-            this.props.navigation.navigate("TopDetails");
-        } else {
-            this.props.navigation.navigate("Login");
-        }
-        
+        this.props.navigation.navigate("Detils");
     }
 }
 
