@@ -1,21 +1,19 @@
 import React from 'react';
-import {Platform, StatusBar, StyleSheet, Text, View} from 'react-native';
-import {NavigationContainer, StackActions} from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import {
   CardStyleInterpolators,
   createStackNavigator,
   HeaderStyleInterpolators,
-  StackNavigationProp,
 } from '@react-navigation/stack';
-
-// import Detils from '@/pages/Detils';
-// import BottomTabs from './BottomTabs';
-// import Category from '@/pages/Category/index';
+import {View, TextInput, Dimensions} from 'react-native'
 
 import Setting from './Home'
 import BottomTabs from './BottomTab';
+import ProduceDetail from '../screen/ProductDetial'
 
 const Stack = createStackNavigator();
+
+const screen = Dimensions.get('window')
 
 class Navigator extends React.Component {
   render() {
@@ -32,9 +30,14 @@ class Navigator extends React.Component {
           }}>
           <Stack.Screen
             options={{
-              title: '首页',
+              title: '',
               headerTitleAlign: 'center',
-              headerTitle: '首页',
+              headerTitle: '',
+              headerBackground: () => (
+                <View style={{backgroundColor: '#FF5E87', height: '100%', width: '100%', justifyContent: 'center'}}>
+                <TextInput placeholder="请输入感兴趣的内容" style={{position: "absolute",backgroundColor: 'white', height: 40,bottom: 10, width: screen.width - 40, marginLeft: 20, marginRight: 80}}></TextInput>
+            </View>
+              ),
             }}
             name="BottomTabs"
             component={BottomTabs}
@@ -48,7 +51,7 @@ class Navigator extends React.Component {
             name="Category"
             component={Setting}
           />
-          <Stack.Screen name="Detils" component={Setting} />
+          <Stack.Screen name="Detils" component={ProduceDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     );

@@ -10,63 +10,27 @@ import {
   // BottomTabNavigationProp,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-// import Home from '@/pages/Home';
-// import Found from '@/pages/Found';
-// import Listen from '@/pages/Listen';
-// import Account from '@/pages/Account';
-// import index, {
-//   RootStackNavigation,
-//   RootStackParamList,
-// } from '@/navigator/index';
-// import {State} from 'react-native-gesture-handler';
-// import {CompositeNavigationProp} from '@react-navigation/native';
-// import {HeaderTitle, StackNavigationProp} from '@react-navigation/stack';
-// import IconFont from '../iconfont/index';
-// import HomeTabs from '@/navigator/HomeTabs';
 
 import Setting from './Home'
 import HomePage from './Homepage'
+import ShopCar from '../screen/ShopCar'
+import Mine from '../screen/Mine'
 
 const screen = Dimensions.get('window');
 
 //获取标签导航的导航器和路由
 const Tab = createBottomTabNavigator();
 
-//获取title的方法
-function getHeaderTitle(routeName) {
-  // const routeName = route.state
-  //   ? route.state.routes[route.state.index].name
-  //   : route.params?.screen || 'HomeTabs';
-  console.log('routeName:' + routeName);
-  switch (routeName) {
-    case 'HomeTabs':
-      return '首页';
-    case 'Listen':
-      return '我听';
-    case 'Found':
-      return '发现';
-    case 'Account':
-      return '账户';
-    default:
-      return '';
-  }
-}
-
 class BottomTabs extends React.Component {
-  componentDidMount() {
-    this.setOption();
-  }
   componentDidUpdate() {
     this.setOption();
   }
 
   setOption = () => {
-    console.log('this.props')
-      console.log(this.props)
+    console.log('this.props   l')
     const {navigation, route} = this.props;
-
     var routeName = getFocusedRouteNameFromRoute(route)
-    if (routeName === 'HomeTabs') {
+    if (navigation) {
       navigation.setOptions({
         headerTransparent: false,
         headerTitle: '',
@@ -76,19 +40,21 @@ class BottomTabs extends React.Component {
         </View>
           ),
       });
-    } else {
-      navigation.setOptions({
-        headerTransparent: false,
-        headerTitle: getHeaderTitle(routeName),
-        headerBackground: null,
-      });
+      if (routeName != 'HomeTabs') {
+        navigation.setOptions({
+          headerTransparent: true,
+          // headerTitle: getHeaderTitle(routeName),
+          headerBackground: null,
+        });
+      }
     }
+    
   };
 
   render() {
     return (
       <Tab.Navigator
-        initialRouteName={HomePage}
+        initialRouteName={'HomePage'}
         tabBarOptions={{
           activeTintColor: '#f86442',
         }}>
@@ -105,20 +71,8 @@ class BottomTabs extends React.Component {
           }}
         />
         <Tab.Screen
-          name={'Listen'}
-          component={Setting}
-          options={{
-            tabBarLabel: '我听',
-            tabBarIcon: ({tintColor, focused}) => (
-                <Image
-                    source={focused ? require('../images/bar/icon-index-select.png') : require('../images/bar/icon-index.png')}
-                    style={{width: 32, height: 32}}/>
-            ),
-          }}
-        />
-        <Tab.Screen
           name={'Found'}
-          component={Setting}
+          component={ShopCar}
           options={{
             tabBarLabel: '购物车',
             tabBarIcon: ({tintColor, focused}) => (
@@ -130,7 +84,7 @@ class BottomTabs extends React.Component {
         />
         <Tab.Screen
           name={'Account'}
-          component={Setting}
+          component={Mine}
           options={{
             tabBarLabel: '我的',
             tabBarIcon: ({tintColor, focused}) => (
