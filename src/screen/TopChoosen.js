@@ -262,18 +262,18 @@ class TopChosen extends React.Component {
                                     <Text style={{fontSize: 10, color: '#FFFFFF', height: 15, lineHeight: 15, paddingLeft: 10, paddingRight: 10}}>钜惠直降</Text>
                                 </View>
                             </View>
-                            <ImageBackground defaultSource={require('../images/draw/everyCheap/dayCheap_placeholder.png')}  style={{alignItems: 'stretch', aspectRatio: 1, marginLeft: 10,marginRight: 10, justifyContent: 'flex-end'}}>
+                            <ImageBackground source={require('../images/draw/everyCheap/dayCheap_placeholder.png')}  style={{alignItems: 'stretch', aspectRatio: 1, marginLeft: 10,marginRight: 10, justifyContent: 'flex-end'}}>
                                 <Text style={{fontSize: 10, color: '#FFFFFF',backgroundColor: '#FF5E87', textAlign:'center'}}>钜惠直降 24小时限时优惠</Text>
                             </ImageBackground>
                             <View style={{flexDirection: 'row', alignContent:"center", justifyContent: 'space-evenly',marginBottom: 10}}>
                                 <View>
-                                    <ImageBackground defaultSource={require('../images/draw/everyCheap/dayCheap_placeholder.png')}  style={{width: ((this.state.he.width - 28) / 2 - 26) / 2,aspectRatio: 1,justifyContent: 'flex-end'}} >
+                                    <ImageBackground source={require('../images/draw/everyCheap/dayCheap_placeholder.png')}  style={{width: ((this.state.he.width - 28) / 2 - 26) / 2,aspectRatio: 1,justifyContent: 'flex-end'}} >
                                         <Text style={{fontSize: 10, color: '#FFFFFF',backgroundColor: '#FF5E87', textAlign:'center'}}>限时优惠</Text>
                                     </ImageBackground>
                                 </View>
 
                                 <View>
-                                    <ImageBackground defaultSource={require('../images/draw/everyCheap/dayCheap_placeholder.png')} style={{width: ((this.state.he.width - 28) / 2 - 26) / 2,aspectRatio: 1,justifyContent: 'flex-end'}} >
+                                    <ImageBackground source={require('../images/draw/everyCheap/dayCheap_placeholder.png')} style={{width: ((this.state.he.width - 28) / 2 - 26) / 2,aspectRatio: 1,justifyContent: 'flex-end'}} >
                                         <Text style={{fontSize: 10, color: '#FFFFFF',backgroundColor: '#FF5E87', textAlign:'center',}}>限时优惠</Text>
                                     </ImageBackground>
                                 </View>
@@ -293,8 +293,8 @@ class TopChosen extends React.Component {
                             <Text style={{marginTop: 3,marginLeft: 10, fontFamily:'PingFangSC-Semibold', color: '#FF356F', fontSize: 11}}>每天十点开抢</Text>
                             <View style={{flex: 1, flexDirection: 'row',marginTop: 5}}>
                             
-                                <ImageBackground defaultSource={require('../images/draw/everyCheap/time_catch_placeholder.png')} style={{flex:0.5, aspectRatio: 1, marginLeft: 10, }} />
-                                <ImageBackground  defaultSource={require('../images/draw/everyCheap/time_catch_placeholder.png')} style={{flex:0.5, aspectRatio: 1, marginLeft: 10, marginRight: 10, }} />
+                                <ImageBackground source={require('../images/draw/everyCheap/time_catch_placeholder.png')} style={{flex:0.5, aspectRatio: 1, marginLeft: 10, }} />
+                                <ImageBackground  source={require('../images/draw/everyCheap/time_catch_placeholder.png')} style={{flex:0.5, aspectRatio: 1, marginLeft: 10, marginRight: 10, }} />
                             </View>
                         </View>
                         <View style={{justifyContent: 'flex-end',backgroundColor: 'white',borderRadius: 4,width: (this.state.he.width - 28) / 2, flex: 1, marginTop: 8}}>
