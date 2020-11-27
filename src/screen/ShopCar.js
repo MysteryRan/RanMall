@@ -280,7 +280,7 @@ class ShopCar extends React.Component {
                     </TouchableOpacity>
                     {/* 右侧部分 */}
                     <View style={{flexDirection: 'row',}}>
-                        <Image defaultSource={require('../images/draw/everyCheap/dayCheap_placeholder.png')} style={{alignSelf: 'center', width: 82, height: 82, borderRadius: 4}} />
+                        <Image source={require('../images/draw/everyCheap/dayCheap_placeholder.png')} style={{alignSelf: 'center', width: 82, height: 82, borderRadius: 4}} />
                         {/* 右侧部分 */}
                         <View style={{width: screen.width - 40 - 82, paddingLeft: 12,paddingRight: 10,justifyContent: 'space-between'}}>
                         <Text style={{marginTop: 12,fontSize: 13, color: 'rgba(37, 37, 37, 1)'}} numberOfLines={2}>{item.item.title}</Text>
@@ -307,7 +307,7 @@ class ShopCar extends React.Component {
     _getLikeItem=() => {
         return (<TouchableOpacity onPress={()=>this._goProduce(item.item)} style={{marginLeft: 10,backgroundColor: 'white', width: (screen.width - 28) / 2,borderRadius: 8}}>
                     {/*   */}
-                    <Image defaultSource={require('../images/draw/everyCheap/dayCheap_placeholder.png')} style={{resizeMode: 'stretch',width: (screen.width - 20 - 8) / 2,aspectRatio: 1,borderTopRightRadius: 8, borderTopLeftRadius: 8}} />
+                    <Image source={require('../images/draw/everyCheap/dayCheap_placeholder.png')} style={{width: (screen.width - 20 - 8) / 2,height: (screen.width - 20 - 8) / 2,borderTopRightRadius: 8, borderTopLeftRadius: 8}} />
                     <Text numberOfLines={2} style={{marginLeft: 8,marginRight: 8,marginTop: 8, color: 'rgba(94, 94, 94, 1)', fontSize: 14,}}>regergergerg</Text>
                     <Text style={{marginLeft: 8,marginTop: 12,fontFamily: 'PingFangSC-Semibold', fontSize: 16}}>¥234234</Text>
                     <View style={{justifyContent: 'space-between',flexDirection: 'row',marginLeft: 8, marginRight: 8,marginBottom: 12}}>
