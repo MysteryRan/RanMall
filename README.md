@@ -20,3 +20,6 @@ React-native start
 // 要先添加assets文件夹
 ios: react-native bundle --entry-file index.js --platform ios --dev false --bundle-output  ./ios/main.jsbundle
 android:react-native bundle --entry-file index.js --platform android --dev false --bundle-output  ./android/app/src/main/assets/index.android.bundle
+
+
+原有iOS项目加载RN界面  ios rn 相互调用。 
