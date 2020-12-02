@@ -11,6 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1A2727432574B452008113FE /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2727422574B452008113FE /* CalendarManager.m */; };
+		1A94EEEF2574C9B100773A6C /* RNTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A94EEEE2574C9B100773A6C /* RNTMapManager.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -51,6 +53,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RanMall/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RanMall/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RanMall/main.m; sourceTree = "<group>"; };
+		1A2727412574B452008113FE /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarManager.h; sourceTree = "<group>"; };
+		1A2727422574B452008113FE /* CalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManager.m; sourceTree = "<group>"; };
+		1A94EEED2574C9B100773A6C /* RNTMapManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTMapManager.h; sourceTree = "<group>"; };
+		1A94EEEE2574C9B100773A6C /* RNTMapManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTMapManager.m; sourceTree = "<group>"; };
 		1C29541A9937E3C2FBA16C69 /* libPods-RanMall-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RanMall-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		219DB0D435B19EE226C63CE9 /* Pods-RanMall-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RanMall-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RanMall-tvOS/Pods-RanMall-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* RanMall-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RanMall-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +132,12 @@
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				1A2727412574B452008113FE /* CalendarManager.h */,
+				1A2727422574B452008113FE /* CalendarManager.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				1A94EEED2574C9B100773A6C /* RNTMapManager.h */,
+				1A94EEEE2574C9B100773A6C /* RNTMapManager.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -148,7 +158,6 @@
 				FA7B1449F78E21C93E22D40D /* Pods-RanMall-tvOSTests.debug.xcconfig */,
 				3C8F3910F9E63DFCDAAAA50A /* Pods-RanMall-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -570,6 +579,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				1A2727432574B452008113FE /* CalendarManager.m in Sources */,
+				1A94EEEF2574C9B100773A6C /* RNTMapManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

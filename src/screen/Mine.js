@@ -18,8 +18,12 @@ import {StyleSheet,
 // 轮播        
 import Swiper from 'react-native-swiper'
 
+import MapView from './MapView'
 // 网络请求工具
 import {shopRequest} from '../tool/NetworkTool'
+
+// rn调用原生方法
+const CalendarManager = NativeModules.CalendarManager;
 
 const screen = Dimensions.get('window')
 const { StatusBarManager } = NativeModules;
@@ -143,6 +147,27 @@ class Mine extends React.Component {
             });
         }, 5000);
     }
+
+    _goSetting=() => {
+        // js给oc传值
+        CalendarManager.addEvent(
+            'Birthday Party',
+            '4 Privet Drive, Surrey'
+          );
+    }
+
+    _goMyOrder=(index) => {
+        console.log(index)
+        // js 调用 oc方法  oc给js传值
+        CalendarManager.findEvents((error, events) => {
+            console.log(events)
+            if (error) {
+              console.error(error);
+            } else {
+              this.setState({ events: events });
+            }
+          });
+    }
     
     _setTitle=() => {
         return <View style={{width: '100%', flexDirection: 'row'}}>
@@ -159,7 +184,7 @@ class Mine extends React.Component {
                     </View>
                 </View>
 
-                <TouchableOpacity activeOpacity={0.8} style={{width: 44,height: 44,position: 'absolute',right: 16,top:0,paddingTop: 8,alignItems: 'flex-end'}} onPress={()=>this.goSetting()}>
+                <TouchableOpacity activeOpacity={0.8} style={{width: 44,height: 44,position: 'absolute',right: 16,top:0,paddingTop: 8,alignItems: 'flex-end'}} onPress={()=>this._goSetting()}>
                     <Image source={require('../images/draw/setting.png')} style={{width: 24,height: 24}}/>
                 </TouchableOpacity>
 
@@ -200,7 +225,7 @@ class Mine extends React.Component {
     _setOrder=() => {
         return (<View style={{backgroundColor: 'rgba(242, 242, 242, 1)'}}>
             <View style={{marginTop: 8,marginBottom: 8,marginLeft: 10,marginRight: 10,backgroundColor: 'white', borderRadius: 8}}>
-                <TouchableOpacity style={{borderTopLeftRadius: 8, borderTopRightRadius: 8,backgroundColor: 'white'}} onPress={() => this.goMyOrder(1)}>
+                <TouchableOpacity style={{borderTopLeftRadius: 8, borderTopRightRadius: 8,backgroundColor: 'white'}} onPress={() => this._goMyOrder(1)}>
                     <View style={{height: 38,borderBottomWidth:1,borderBottomColor:'#E6E6E6', flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Text style={{lineHeight: 38, fontSize: 14,marginLeft: 10}}>我的订单</Text>
                         <View style={{marginRight: 10,flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -210,7 +235,7 @@ class Mine extends React.Component {
                     </View>
                 </TouchableOpacity>
                 <View style={{flexDirection: 'row',justifyContent: 'space-between'}}>
-                    <TouchableOpacity style={{paddingTop: 10, width: (screen.width - 20) / 4.0}} onPress={() => this.goMyOrder(1)}>
+                    <TouchableOpacity style={{paddingTop: 10, width: (screen.width - 20) / 4.0}} onPress={() => this._goMyOrder(1)}>
                         <Image style={{alignSelf: 'center',height: 34, width: 34,marginBottom: 3}}
                             source={require("../images/draw/icon_dfk.jpg")}/>
                         <Text style={{alignSelf: 'center', fontSize: 12,marginBottom: 9, lineHeight: 16}} >待付款</Text>
@@ -319,6 +344,7 @@ class Mine extends React.Component {
                             <Text style={{}}>猜你喜欢</Text>
                             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.1)',height: 1,width: (screen.width - 120) / 2}}></View>
                     </View>
+                    <MapView style={{width: 100, height: 100}} />
                     <FlatList
                             data={DATA}
                             renderItem={(item)=>this._getLikeItem(item)}

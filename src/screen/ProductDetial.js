@@ -10,6 +10,7 @@ import {StyleSheet,
         NativeModules,
         StatusBar,
         Image,
+        DeviceInfo,
       } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 // 轮播        
