@@ -79,7 +79,7 @@ export default class ProductAlert extends Component {
                                 </View>
                                 {this._kindShow()}
                             </View>
-                            <TouchableOpacity onPress={() => {this._addShopCar()}} 
+                            <TouchableOpacity onPress={() => {this._closeAlert()}} 
                                             style={{height: 70,backgroundColor: 'rgba(226, 35, 26, 1)'}}>
                                 <Text style={{lineHeight: 70,textAlign: 'center',color: 'white'}}>确定</Text>
                             </TouchableOpacity>

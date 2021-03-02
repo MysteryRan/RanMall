@@ -62,6 +62,23 @@ class ShopCar extends React.Component {
         };
     }
 
+    static navigationOptions = ({ navigation }) => ({
+        tabBarOnPress: (tab) => {
+          navigation.state.params.navigatePress()
+          tab.jumpToIndex(tab.scene.index)
+        }
+      })
+    
+    // tab 切换调用方法
+    clickTabCallback = () => {
+    this.init() // 这里处理你的逻辑
+    console.log('-------')
+    }
+    
+    componentDidMount() {
+        // 使用这个来调用this
+    }
+
     componentWillMount() {
         this._panResponse = PanResponder.create({
             onStartShouldSetPanResponder: (evt, gestureState) => false,
@@ -127,6 +144,9 @@ class ShopCar extends React.Component {
         this.setState({
             shopCars: DATA,
         })
+
+        console.log('here here')
+        this.props.navigation.setParams({ navigatePress: this.clickTabCallback }) 
     }
 
     _loadData() {

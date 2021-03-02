@@ -305,7 +305,7 @@ class ProduceDetail extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={1} focusedOpacity={1} activeOpacity={1}
                                   onPress={() => {
-                                      this.paramsDialog()
+                                      // this.paramsDialog()
                                   }}>
                         <View style={{flexDirection: 'row',justifyContent: 'space-between'}}>
                             <View style={{flexDirection: 'row',justifyContent: 'space-between'}}>

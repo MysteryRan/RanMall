@@ -15,6 +15,7 @@ import Setting from './Home'
 import HomePage from './Homepage'
 import ShopCar from '../screen/ShopCar'
 import Mine from '../screen/Mine'
+import VideoChat from '../screen/VideoChat'
 
 const screen = Dimensions.get('window');
 
@@ -87,6 +88,18 @@ class BottomTabs extends React.Component {
           component={Mine}
           options={{
             tabBarLabel: '我的',
+            tabBarIcon: ({tintColor, focused}) => (
+                <Image
+                    source={focused ? require('../images/bar/icon-index-select.png') : require('../images/bar/icon-index.png')}
+                    style={{width: 32, height: 32}}/>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={'Video'}
+          component={VideoChat}
+          options={{
+            tabBarLabel: '视频',
             tabBarIcon: ({tintColor, focused}) => (
                 <Image
                     source={focused ? require('../images/bar/icon-index-select.png') : require('../images/bar/icon-index.png')}

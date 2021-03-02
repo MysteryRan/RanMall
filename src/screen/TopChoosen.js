@@ -371,7 +371,9 @@ class TopChosen extends React.Component {
 
     //跳转商品详情界面
     _goProduce(info){
-        this.props.navigation.navigate("Detils");
+        // this.props.navigation.navigate("Detils");
+
+        this.props.navigation.push("Detils");
     }
 }
 
